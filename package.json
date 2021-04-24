@@ -1,15 +1,22 @@
 {
-  "name": "cripto-confAPI",
+  "name": "cripto-confapi",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index",
     "dev": "nodemon ./src/index"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bueno12223/cripto-conf.git"
+  },
   "keywords": [],
-  "author": "",
+  "author": "jesus berrio berriojesus122@gmail.com",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bueno12223/cripto-conf/issues"
+  },
   "dependencies": {
     "@hapi/boom": "^9.1.2",
     "bcrypt": "^5.0.1",

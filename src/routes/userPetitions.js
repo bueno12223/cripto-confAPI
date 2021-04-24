@@ -9,7 +9,7 @@ userPetition = (app) => {
     mongoose.connection.once('open', () => console.log('Connected succesfully to mongo') );
     const router = express.Router()
 
-    app.use('/', router);
+    app.use('/api', router);
 
     router.get('/',  async (req, res, next) => {
         try{
@@ -28,13 +28,13 @@ userPetition = (app) => {
             const user = await UserModel.findById(id);
             user ? res.status(200).json(user) : res.status(404).json({'message': 'user not found'})
         }catch(e){
-            next(e)
+            next(e) 
         }
     })
 
-    router.post('/', async ( req, res , next) => {
-        const  { name, origin, plan, type } = req.body;
-        const userData = new UserModel( { name, origin, plan, type });
+    router.post('/', async( req, res , next) => {
+        const  { firstName, lastName, nationality, type, email } = req.body;
+        const userData = new UserModel({ firstName, lastName, nationality, type, email });
         try{
             await userData.save((err) => { err 
                 ? res.status(404).json({'message': 'error in post data'})

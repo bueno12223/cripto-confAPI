@@ -1,19 +1,24 @@
 const {Schema, model} = require('mongoose');
 
 const userSchema = new Schema({
-    name: {
+    firstName: {
         type: String,
         required: true
     },
-    plan: {
+    lastName: {
         type: String,
         required: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
     },
     type: {
         type: String,
         required: true
     },
-    origin: {
+    nationality: {
         type: String,
         required: true
     },
