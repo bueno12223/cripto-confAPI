@@ -7,6 +7,9 @@
     "start": "node ./src/index",
     "dev": "nodemon ./src/index"
   },
+  "engines": {
+    "node": "15.5.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bueno12223/cripto-conf.git"
